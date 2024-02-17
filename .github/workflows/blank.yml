@@ -1,0 +1,16 @@
+name: Fetch Latest Block Height
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *' # Запускается каждый час
+
+jobs:
+  fetch-block-height:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fetch latest block height from Osmosis RPC
+      run: |
+        response=$(curl -s 'https://osmosis-rpc.polkachu.com/status?')
+        block_height=$(echo $response | jq '.result.sync_info.latest_block_height' | tr -d '"')
+        echo "Latest Block Height: $block_height"

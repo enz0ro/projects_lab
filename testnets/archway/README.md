@@ -1,9 +1,5 @@
-# Проект на Osmosis
-
-Этот проект использует данные сети Osmosis.
+# Archway Project
 
 ## Статистика Сети
 
 - Latest Block Height: <!--block_height-->updating...
-
-Дополнительная информация о сети и другие статистические данные.

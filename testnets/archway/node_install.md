@@ -1,3 +1,41 @@
+
+<details>
+  <summary>Install Namada</summary>
+      
+  - **Set the desired version**:
+    ```bash
+    NAMADA_TAG="v0.31.1"
+    ```
+
+  - **Download and extract**:
+    ```bash
+    curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz"
+    tar -xvf namada.tar.gz
+    ```
+
+  - **Move to `/usr/local/bin`**:
+    ```bash
+    sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/
+    ```
+
+  - **Cleanup**:
+    ```bash
+    rm -rf namada-${NAMADA_TAG}-Linux-x86_64 namada.tar.gz
+    ```
+
+  - **Verify the installation**:
+    ```bash
+    namada --version
+    ```
+
+</details>
+
+
+
+
+
+
+
 ## Prepare a server
 ```python
 UPDATE AND INSTALL PACKAGES

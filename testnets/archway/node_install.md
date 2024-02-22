@@ -247,3 +247,26 @@ wget -O $HOME/.archway/config/genesis.json https://snapshots.polkachu.com/genesi
 ```bash
 wget -O $HOME/.archway/config/addrbook.json https://snapshots.polkachu.com/addrbook/archway/addrbook.json
 ```
+
+```
+sudo tee /etc/systemd/system/$USER.service > /dev/null <<EOF
+[Unit]
+Description="Archway node"
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$HOME/go/bin/cosmovisor start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+Environment="DAEMON_NAME=archwayd"
+Environment="DAEMON_HOME=/home/USER/.archway"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```

@@ -76,6 +76,7 @@ archwayd version --long | grep -e version -e commit
 > commit: 532f53724bf477c5c8826fae376906526a09ed2d   
 
 
+
 </details>
 
 
@@ -100,6 +101,15 @@ haqqd version --long | grep -e commit -e version
     
 </details>
 
+# Create Cosmovisor Folders
+```
+mkdir -p ~/.archway/cosmovisor/genesis/bin
+mkdir -p ~/.archway/cosmovisor/upgrades
+```
+# Load Node Binary into Cosmovisor Folder
+```
+cp ~/go/bin/archwayd ~/.archway/cosmovisor/genesis/bin
+```
 
 ##### Initializing the Archway Node and Configuring Settings
 ```bash

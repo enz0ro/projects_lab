@@ -1,3 +1,20 @@
+CHAIN DATA
+
+ "website": "https://archway.io/",
+  "pretty_name": "Archway",
+  "chain_id": "archway-1",
+  "bech32_prefix": "archway",
+  "daemon_name": "archwayd",
+  "node_home": "$HOME/.archway",
+          "denom": "aarch",
+        "fixed_min_gas_price": 900000000000,
+        "git_repo": "https://github.com/archway-network/archway",
+           "recommended_version": "v4.0.3",
+    "compatible_versions": [
+      "v4.0.3"
+    ],
+          "linux/amd64": "https://github.com/archway-network/archway/releases/download/v4.0.3/archwayd_linux_amd64",
+                "genesis_url": "https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz"
 
 <details>
   <summary>

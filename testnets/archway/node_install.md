@@ -150,8 +150,12 @@ echo "export NODE=http://localhost:$((NODES_NUM+266))57" >> $HOME/.bash_profile 
 source $HOME/.bash_profile && \
 $TIKER config node $NODE
 ```
+<details>
+  <summary>
+Pruning_relayer
+  </summary>
+  
 ```
-# pruning_relayer
 indexer="kv" && \
 snapshot_interval="2000" && \
 pruning="custom" && \
@@ -167,8 +171,15 @@ prometheus="false" && \
 rpc_address="0.0.0.0" && \
 minimum_gas_prices="0$TOKEN"
 ```
+</details>
+
+<details>
+  <summary>
+Pruning_test_relayer
+  </summary>
+  
 ```
-# pruning_test_relayer
+
 indexer="kv" && \
 snapshot_interval="2000" && \
 pruning="custom" && \
@@ -184,8 +195,14 @@ prometheus="false" && \
 rpc_address="127.0.0.1" && \
 minimum_gas_prices="0$TOKEN" 
 ```
+</details>
+
+<details>
+  <summary>
+Для валидатора
+  </summary>
+  
 ```
-# Для валидатора:
 indexer="null" && \
 snapshot_interval="100" && \
 pruning="custom" && \
@@ -201,6 +218,9 @@ prometheus="false" && \
 rpc_address="127.0.0.1" && \
 minimum_gas_prices="0.001$TOKEN"
 ```
+
+</details>
+
 ```
 sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/$CONFIG/config/config.toml && \
 sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/$CONFIG/config/app.toml && \

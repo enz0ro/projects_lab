@@ -1,5 +1,5 @@
 CHAIN DATA:
-
+```
   PROJECT=Archway
   DAEMON=archwayd
   DAEMON_HOME=.archway
@@ -10,17 +10,10 @@ CHAIN DATA:
   MIN_GAS_PRICE=900000000000
   GENESIS=https://snapshots.polkachu.com/genesis/archway/genesis.json
   ADDRBOOK=https://snapshots.polkachu.com/addrbook/archway/addrbook.json
-  SNAP_RPC=https://archway-rpc.polkachu.com:443 
+  SNAP_RPC=https://archway-rpc.polkachu.com:443
+```
 
 
-
-        "git_repo": "https://github.com/archway-network/archway",
-           "recommended_version": "v4.0.3",
-    "compatible_versions": [
-      "v4.0.3"
-    ],
-          "linux/amd64": "https://github.com/archway-network/archway/releases/download/v4.0.3/archwayd_linux_amd64",
-                "genesis_url": "https://github.com/archway-network/networks/raw/main/archway/genesis/genesis.json.gz"
 
 <details>
   <summary>

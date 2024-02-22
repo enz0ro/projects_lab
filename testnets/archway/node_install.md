@@ -219,11 +219,11 @@ sed -i.bak -e "/^\[json-rpc\]/,/^enable/s/^enable *=.*/enable = '$json_rpc_enabl
 ```
 ##### Downloading Genesis and Address Book Files
 ```bash
-wget -O $HOME/.archway/config/genesis.json https://raw.githubusercontent.com/archway-network/networks/main/constantine-1/genesis.json
+wget -O $HOME/.archway/config/genesis.json https://snapshots.polkachu.com/genesis/archway/genesis.json
 ```
 > sha256sum ~/.sidechain/config/genesis.json   
 > 69bb55baeed046704d09f7590d8969dfafcc5f6afbd00d9479bd17ced44b7708
 
 ```bash
-wget -O $HOME/.sidechain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Side_Protocol/addrbook.json"
+wget -O $HOME/.sidechain/config/addrbook.json https://snapshots.polkachu.com/addrbook/archway/addrbook.json
 ```

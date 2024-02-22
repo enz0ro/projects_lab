@@ -1,11 +1,19 @@
-CHAIN DATA
+CHAIN DATA:
 
-  "pretty_name": "Archway",
-  "chain_id": "archway-1",
-  "daemon_name": "archwayd",
-  "node_home": "$HOME/.archway",
-          "denom": "aarch",
-        "fixed_min_gas_price": 900000000000,
+  PROJECT=Archway
+  DAEMON=archwayd
+  DAEMON_HOME=.archway
+  CHAIN=archway-1
+  GIT_REPO=https://github.com/archway-network/archway.git
+  VERSION=v4.0.3
+  DENOM=aarch
+  MIN_GAS_PRICE=900000000000
+  GENESIS=https://snapshots.polkachu.com/genesis/archway/genesis.json
+  ADDRBOOK=https://snapshots.polkachu.com/addrbook/archway/addrbook.json
+  SNAP_RPC=https://archway-rpc.polkachu.com:443 
+
+
+
         "git_repo": "https://github.com/archway-network/archway",
            "recommended_version": "v4.0.3",
     "compatible_versions": [

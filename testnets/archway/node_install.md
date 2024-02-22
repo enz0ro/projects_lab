@@ -256,7 +256,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/cosmovisor start
+ExecStart=$HOME/go/bin/cosmovisor run 
 Restart=always
 RestartSec=3
 LimitNOFILE=65535

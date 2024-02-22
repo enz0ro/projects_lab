@@ -225,5 +225,5 @@ wget -O $HOME/.archway/config/genesis.json https://snapshots.polkachu.com/genesi
 > 69bb55baeed046704d09f7590d8969dfafcc5f6afbd00d9479bd17ced44b7708
 
 ```bash
-wget -O $HOME/.sidechain/config/addrbook.json https://snapshots.polkachu.com/addrbook/archway/addrbook.json
+wget -O $HOME/.archway/config/addrbook.json https://snapshots.polkachu.com/addrbook/archway/addrbook.json
 ```

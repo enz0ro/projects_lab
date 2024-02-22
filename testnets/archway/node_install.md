@@ -51,10 +51,6 @@ go version
 
 ### Node Install
 
-#### Cosmovisor
-```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
-```
 #### Installing Node Binary Files
 
 
@@ -72,8 +68,8 @@ make install
 ```bash
 archwayd version --long | grep -e version -e commit
 ```
-> version: 0.2.0   
-> commit: 532f53724bf477c5c8826fae376906526a09ed2d   
+> version: v4.0.3
+commit: 3cc9228982f651d3a54b395d6ff026e61e91f4b6
 
 
 
@@ -87,29 +83,19 @@ archwayd version --long | grep -e version -e commit
     
 ```bash
 cd $HOME
-wget https://github.com/haqq-network/haqq/releases/download/v1.7.3/haqq_1.7.3_Linux_x86_64.tar.gz
-tar -xvzf haqq_1.7.3_Linux_x86_64.tar.gz
-cd bin && chmod +x haqqd
-mv haqqd $(which haqqd)
-cd $HOME && rm -rf haqq_1.7.3_Linux_x86_64.tar.gz
+rm -rf archway
+wget -O archwayd https://github.com/archway-network/archway/releases/download/v4.0.3/archwayd_linux_amd64
+chmod +x archwayd
+mv archwayd go/bin
 ```
 ```bash
-haqqd version --long | grep -e commit -e version
+archwayd version --long | grep -e version -e commit
 ```
-> #version: 1.7.3   
-> #commit: a4acbbe8b771e6d0ad36040197558d7ff30179b2
+> version: v4.0.3
+commit: 3cc9228982f651d3a54b395d6ff026e61e91f4b6
     
 </details>
 
-# Create Cosmovisor Folders
-```
-mkdir -p ~/.archway/cosmovisor/genesis/bin
-mkdir -p ~/.archway/cosmovisor/upgrades
-```
-# Load Node Binary into Cosmovisor Folder
-```
-cp ~/go/bin/archwayd ~/.archway/cosmovisor/genesis/bin
-```
 
 ##### Initializing the Archway Node and Configuring Settings
 ```bash
@@ -117,6 +103,26 @@ archwayd init ENZORO_GUIDE --chain-id archway-1 && \
 archwayd config chain-id archway-1 && \
 archwayd config keyring-backend os
 ```
+
+  <details>
+  <summary>
+ Cosmovisor
+  </summary>
+
+```
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
+```
+#### Create Cosmovisor Folders
+```
+mkdir -p ~/.archway/cosmovisor/genesis/bin
+mkdir -p ~/.archway/cosmovisor/upgrades
+```
+#### Load Node Binary into Cosmovisor Folder
+```
+cp ~/go/bin/archwayd ~/.archway/cosmovisor/genesis/bin
+```
+
+</details>
 
 ```
 NODES_NUM="2"

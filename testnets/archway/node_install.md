@@ -256,15 +256,13 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/cosmovisor run 
-Restart=always
+Environment="DAEMON_NAME=archwayd"
+Environment="DAEMON_HOME=$HOME/.archway"
+Environment="UNSAFE_SKIP_BACKUP=true"
+ExecStart=`which cosmovisor` run start
+Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
-Environment="DAEMON_NAME=archwayd"
-Environment="DAEMON_HOME=/home/USER/.archway"
-Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
-Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-Environment="UNSAFE_SKIP_BACKUP=true"
 
 [Install]
 WantedBy=multi-user.target

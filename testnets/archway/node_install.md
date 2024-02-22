@@ -1,9 +1,7 @@
 CHAIN DATA
 
- "website": "https://archway.io/",
   "pretty_name": "Archway",
   "chain_id": "archway-1",
-  "bech32_prefix": "archway",
   "daemon_name": "archwayd",
   "node_home": "$HOME/.archway",
           "denom": "aarch",

@@ -169,7 +169,7 @@ json_rpc_enable="false" && \
 filter_peers="true" && \
 prometheus="false" && \
 rpc_address="0.0.0.0" && \
-minimum_gas_prices="0$TOKEN"
+minimum_gas_prices="0aarch"
 ```
 </details>
 

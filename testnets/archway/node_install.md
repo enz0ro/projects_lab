@@ -51,6 +51,10 @@ go version
 
 ### Node Install
 
+#### Cosmovisor
+```
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
+```
 #### Installing Node Binary Files
 
 
@@ -62,7 +66,7 @@ go version
 ```bash
 git clone https://github.com/archway-network/archway.git archway && \
 cd archway && \
-git checkout v0.2.0 && \
+git checkout v4.0.2 && \
 make install
 ```
 ```bash
@@ -99,8 +103,8 @@ haqqd version --long | grep -e commit -e version
 
 ##### Initializing the Archway Node and Configuring Settings
 ```bash
-archwayd init ENZORO_GUIDE --chain-id constantine-1 && \
-archwayd config chain-id constantine-1 && \
+archwayd init ENZORO_GUIDE --chain-id archway-1 && \
+archwayd config chain-id archway-1 && \
 archwayd config keyring-backend os
 ```
 

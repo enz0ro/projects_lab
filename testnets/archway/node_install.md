@@ -138,17 +138,17 @@ sed -i.bak -e "s/\(proxy_app = \"tcp:\/\/\)\([^:]*\):\([0-9]*\).*/\1\2:$((NODES_
             -e "s/\(pprof_laddr = \"\)\([^:]*\):\([0-9]*\).*/\1localhost:$((NODES_NUM + 60))60\"/" \
             -e "/\[p2p\]/,/^\[/{s/\(laddr = \"tcp:\/\/\)\([^:]*\):\([0-9]*\).*/\1\2:$((NODES_NUM + 266))56\"/}" \
             -e "/\[p2p\]/,/^\[/{s/\(external_address = \"\)\([^:]*\):\([0-9]*\).*/\1${EXTERNAL_IP}:$((NODES_NUM + 266))56\"/; t; s/\(external_address = \"\).*/\1${EXTERNAL_IP}:$((NODES_NUM + 266))56\"/}" \
-            -e "s/\(prometheus_listen_addr = \":\)\([0-9]*\).*/\1$((NODES_NUM + 266))60\"/" $HOME/$CONFIG/config/config.toml
+            -e "s/\(prometheus_listen_addr = \":\)\([0-9]*\).*/\1$((NODES_NUM + 266))60\"/" $HOME/.archway/config/config.toml
 
 sed -i.bak \
     -e "/\[api\]/,/^\[/{s/\(address = \"tcp:\/\/\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$((NODES_NUM + 13))17\4/}" \
     -e "/\[grpc\]/,/^\[/{s/\(address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$((NODES_NUM + 90))90\4/}" \
     -e "/\[grpc-web\]/,/^\[/{s/\(address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$((NODES_NUM + 90))91\4/}" \
     -e "/\[json-rpc\]/,/^\[/{s/\(address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$((NODES_NUM + 85))45\4/}" \
-    -e "/\[json-rpc\]/,/^\[/{s/\(ws-address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$((NODES_NUM + 85))46\4/}"  $HOME/$CONFIG/config/app.toml 
+    -e "/\[json-rpc\]/,/^\[/{s/\(ws-address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$((NODES_NUM + 85))46\4/}"  $HOME/.archway/config/app.toml 
 echo "export NODE=http://localhost:$((NODES_NUM+266))57" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
-$TIKER config node $NODE
+archwayd config node $NODE
 ```
 <details>
   <summary>
@@ -222,20 +222,20 @@ minimum_gas_prices="0.001$TOKEN"
 </details>
 
 ```
-sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/$CONFIG/config/config.toml && \
-sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "/^\[api\]/,/^enable/s/^enable *=.*/enable = '$api_enable'/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "/^\[grpc\]/,/^enable/s/^enable *=.*/enable = '$grpc_enable'/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak -e "/^\[grpc-web\]/,/^enable/s/^enable *=.*/enable = '$grpc_web_enable'/" $HOME/$CONFIG/config/app.toml && \
-sed -i.bak "/^\[rpc\]/,/^laddr =/s/laddr = \"tcp:\/\/127\.0\.0\.1:/laddr = \"tcp:\/\/$rpc_address:/" $HOME/$CONFIG/config/config.toml && \
-sed -i.bak -e 's/^filter_peers *=.*/filter_peers = '$filter_peers'/' $HOME/$CONFIG/config/config.toml && \
-sed -i.bak -e "/^\[instrumentation\]/,/^prometheus/s/^prometheus *=.*/prometheus = '$prometheus'/" $HOME/$CONFIG/config/config.toml && \
-sed -i.bak -e 's/^minimum-gas-prices *=.*/minimum-gas-prices = "'$minimum_gas_prices'"/' $HOME/$CONFIG/config/app.toml  && \
-sed -i.bak -e "/^\[json-rpc\]/,/^enable/s/^enable *=.*/enable = '$json_rpc_enable'/" $HOME/$CONFIG/config/app.toml
+sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.archway/config/config.toml && \
+sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/"  $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/"  $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/"  $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/"  $HOME/.archway/config/app.toml && \
+sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/"  $HOME/.archway/config/app.toml && \
+sed -i.bak -e "/^\[api\]/,/^enable/s/^enable *=.*/enable = '$api_enable'/"  $HOME/.archway/config/app.toml && \
+sed -i.bak -e "/^\[grpc\]/,/^enable/s/^enable *=.*/enable = '$grpc_enable'/" $HOME/.archway/config/app.toml && \
+sed -i.bak -e "/^\[grpc-web\]/,/^enable/s/^enable *=.*/enable = '$grpc_web_enable'/"  $HOME/.archway/config/app.toml && \
+sed -i.bak "/^\[rpc\]/,/^laddr =/s/laddr = \"tcp:\/\/127\.0\.0\.1:/laddr = \"tcp:\/\/$rpc_address:/"  $HOME/.archway/config/config.toml && \
+sed -i.bak -e 's/^filter_peers *=.*/filter_peers = '$filter_peers'/' $HOME/.archway/config/config.toml && \
+sed -i.bak -e "/^\[instrumentation\]/,/^prometheus/s/^prometheus *=.*/prometheus = '$prometheus'/"  $HOME/.archway/config/config.toml && \
+sed -i.bak -e 's/^minimum-gas-prices *=.*/minimum-gas-prices = "'$minimum_gas_prices'"/'  $HOME/.archway/config/app.toml  && \
+sed -i.bak -e "/^\[json-rpc\]/,/^enable/s/^enable *=.*/enable = '$json_rpc_enable'/"  $HOME/.archway/config/app.toml
 ```
 ##### Downloading Genesis and Address Book Files
 ```bash

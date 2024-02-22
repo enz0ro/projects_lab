@@ -43,6 +43,9 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
+```
+. <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/golang.sh)
+```
 
 </details>
 

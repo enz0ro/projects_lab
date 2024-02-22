@@ -11,7 +11,7 @@ sudo apt update && sudo apt upgrade -y
 
 #### Install Required Packages
 ```bash
-sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
+sudo apt install curl tar wget clang tree pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 ```
 
 <details>
@@ -62,13 +62,13 @@ go version
 ```bash
 git clone https://github.com/archway-network/archway.git archway && \
 cd archway && \
-git checkout v4.0.2 && \
+git checkout v4.0.3 && \
 make install
 ```
 ```bash
 archwayd version --long | grep -e version -e commit
 ```
-> version: v4.0.3
+> version: v4.0.3       
 commit: 3cc9228982f651d3a54b395d6ff026e61e91f4b6
 
 
@@ -91,7 +91,7 @@ mv archwayd go/bin
 ```bash
 archwayd version --long | grep -e version -e commit
 ```
-> version: v4.0.3
+> version: v4.0.3       
 commit: 3cc9228982f651d3a54b395d6ff026e61e91f4b6
     
 </details>
@@ -112,6 +112,10 @@ archwayd config keyring-backend os
 ```
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
 ```
+```
+cosmovisor version --cosmovisor-only
+```
+> cosmovisor version: v1.5.0
 #### Create Cosmovisor Folders
 ```
 mkdir -p ~/.archway/cosmovisor/genesis/bin
